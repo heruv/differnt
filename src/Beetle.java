@@ -2,6 +2,7 @@ import java.util.Arrays;
 
 public class Beetle {
 
+    private final int cord;
     public static double[]current_position;
     public static double[]A;
     public static double[]B;
@@ -11,13 +12,16 @@ public class Beetle {
     public static float modifier = 2;
     public static float delta_t = 1; //delta t
 
-    public void start(int id)
-    {
-        int cord = 5; // temp solution - ?
-        double[][] possible_position = {{0, 0}, {cord, 0}, {0, cord}};
+    public Beetle(int cord){
+        this.cord = cord; // temp solution - ?
         A = new double[]{0, cord};
         B = new double[]{0, 0};
         C = new double[]{cord, 0};
+    }
+
+    public void start(int id)
+    {
+        double[][] possible_position = {{0, 0}, {cord, 0}, {0, cord}};
 
         current_position = possible_position[id-1];
 
